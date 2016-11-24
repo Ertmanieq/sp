@@ -1,5 +1,7 @@
-CFLAGS=-g -Wall -std=c11
-LDLIBS=-lm
+CFLAGS = -std=c11 -Wall
+LDLIBS = -lm
 
-clean:
-	rm -f *.o *~
+all : zad1 zad2
+
+clean :
+	rm -f a.out *.o zad1.c zad2.c
