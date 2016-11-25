@@ -1,4 +1,3 @@
-
 #include <stdio.h>
 
 int even(int k) {
