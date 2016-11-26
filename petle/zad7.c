@@ -1,19 +1,19 @@
+  #include <stdio.h>
 
-#include <stdio.h>
+  void elementy( double tab[] ){
+    int i;
+    int dod = 0;
 
-int tablica(int n) {
-  int dod=0;
-  double tab[n];
-  for(int a = 0; a < n; a++) {
-    scanf("%lf", &tab[a]);
-    if (tab[a] > 0)
-      dod++;
+    for (i = 0; i <= 5; i++)  {
+      printf("Podaj liczbę: ");
+      scanf("%lf", &tab[i]);
+      if (tab[i] > 0)
+        dod += 1;
+    }
+    printf("liczba liczb dodatnich: %d\n", dod);
   }
-  return dod;
-}
+    int main() {
+      double tablica[6];
 
-int main() {
-  int n;
-  scanf("%d", &n);
-  printf("%d\n", tablica(n));
-}
+      elementy(tablica);
+    }
