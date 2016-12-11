@@ -1,32 +1,29 @@
 #include <stdio.h>
-int wzor(int x, int y);
 
-  int main() {
-  int x = 1, j = 0, i;
-
-  while (j <= 3) {
-    int tab[7] = {x, 8-x, 5-x, (x+1)*2, tab[2], tab[1], x};
-    i = 0;
-    while (i <= 6) {
-      wzor(tab[i], i);
-      i++;
-    }
-    printf("\n");
-    x++;
-    j++;
-  }
-  return 0;
+void left(int n) {
+  for(; n > 0; n--)
+    putchar('*');
+  putchar('\t');
 }
 
-  int wzor(x, y) {
-  int i = 0;
+void right(int n) {
+  for(int s = 8 - n; s > 0; s--)
+    putchar(' ');
+  for(; n > 0; n--)
+    putchar('*');
+}
 
-  while(i < x) {
-    if (y%2 == 0)
-      putchar('*');
-    else
-      putchar(' ');
-    i++;
+void drukuj(int n) {
+  for(int i = 0; i < n; i++) {
+    left(i+1);
+    left(n-i);
+    right(n-i);
+    right(i+1);
+    putchar('\n');
   }
-  return 0;
+}
+
+int main() {
+  int n = 4;
+  drukuj(n);
 }
